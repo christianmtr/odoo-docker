@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        path: 13.0
+        path: '13.0'
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag odoo-ayphutec:13

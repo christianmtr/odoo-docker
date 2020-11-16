@@ -14,12 +14,16 @@ RUN apt-get update \
             dirmngr \
             fonts-noto-cjk \
             gnupg \
+            gcc \
+            pkg-config \
             libssl-dev \
             libxml2-dev \
             libxmlsec1-dev \
             libxmlsec1-openssl \
+            libffi-dev \
             node-less \
             npm \
+            python3-dev \
             python3-num2words \
             python3-pip \
             python3-phonenumbers \
@@ -34,7 +38,7 @@ RUN apt-get update \
             python3-xlwt \
             xz-utils \
             python3-pysimplesoap \
-        && pip3 install pytesseract pdf417gen xmlsec \
+        && pip3 install pytesseract pdf417gen xmlsec img2pdf \
         && curl -o wkhtmltox.deb -sSL https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.buster_amd64.deb \
         && echo 'ea8277df4297afc507c61122f3c349af142f31e5 wkhtmltox.deb' | sha1sum -c - \
         && apt-get install -y --no-install-recommends ./wkhtmltox.deb \
